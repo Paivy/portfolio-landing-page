@@ -1,14 +1,589 @@
+
 *{
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+html{
+    scroll-behavior: smooth;
+}
+.max-width{
+    max-width: 1300px;
+    padding: 0 80px;
+    margin: auto;
 }
 
-.main{
+
+/*navbar styling*/
+.navbar{
+    position: fixed;
     width: 100%;
-    background: linear-gradient(to top, rgba(146, 117, 117, 0.5)50%,rgba(112, 85, 85, 0.5))50%, url(images.jpeg)
-    background-position: center;
-    background-size: cover;
-    height: 110vh;
+    z-index: 999;
+    padding: 30px 0;
+    font-family: 'ubuntu', sans-serif;
+    transition:  all 0.3 ease;
 }
+.navbar.sticky{
+    padding: 15px 0;
+    background:skyblue;
+}
+.navbar .max-width{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+}
+.navbar .logo a{
+    color: #fff;
+    font-size: 35px;
+    font-weight: 600;
+}
+.navbar .logo a span{
+    color: skyblue;
+}
+.navbar.sticky .logo a span{
+    color: #fff;
+    transition:  all 0.3 ease;
+}
+.navbar .menu li{
+    list-style: none;
+    display: inline-block;
+}
+.navbar .menu li a{
+    display: block;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 500;
+    margin-left: 25px;
+    transition: color 0.3s ease;
+}
+.navbar .menu li a:hover{
+    color: skyblue;
+}
+.navbar.sticky .menu li a:hover{
+    color: #fff;
+    transition:  all 0.3 ease;
+}
+
+/*menu btn styling*/
+.menu-btn{
+    color: #fff;
+    font-size: 23px;
+    cursor: pointer;
+    display: none;
+}
+.Scroll-up-btn{
+    position: fixed;
+    height: 45px;
+    width: 42px;
+    background: skyblue;
+    right: 30px;
+    bottom: 10px;
+    text-align: center;
+    line-height: 45px;
+    color: #fff;
+    z-index: 9999;
+    font-size: 30px;
+    border-radius: 6px;
+    cursor: pointer;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s ease;
+}
+.Scroll-up-btn.show{
+    bottom: 30px;
+    opacity: 1;
+    pointer-events: auto;
+}
+/*home section styling*/
+.animation-area{
+    background: linear-gradient(to left, #E0E7E9,#354649);
+    width: 100%;
+    height: 100vh;
+}
+.box-area{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow:hidden;
+}
+.box-area li{
+    position:absolute;
+    display: block;
+    list-style: none;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background: lightskyblue;
+    animation: animate 20s linear infinite;
+    bottom: -150px;
+}
+.box-area li:nth-child(1){
+    left: 86%;
+    width: 80px;
+    height: 80px;
+    animation-delay:0s ;
+}
+.box-area li:nth-child(2){
+    left: 12%;
+    width: 30px;
+    height: 30px;
+    animation-delay:1.50s ;
+    animation-duration: 10s;
+}
+.box-area li:nth-child(3){
+    left: 70%;
+    width: 100px;
+    height: 100px;
+    animation-delay:5.5s ;
+}
+.box-area li:nth-child(4){
+    left: 42%;
+    width: 150px;
+    height: 150px;
+    animation-delay:0s ;
+    animation-duration: 15s;
+}
+.box-area li:nth-child(5){
+    left: 65%;
+    width: 40px;
+    height: 40px;
+    animation-delay:0s;
+}
+.box-area li:nth-child(6){
+    left: 15%;
+    width: 110px;
+    height: 110px;
+    animation-delay:3.0s;
+}
+@keyframes animate{
+    0%{
+        transform: translateY(0) rotate(0deg);
+        opacity: 1;
+    }
+    100%{
+        transform: translateY(-800px) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+.home{
+    display: flex;
+    /*background: url("images/kisera5.jpeg"), no-repeat center;
+    height: 100vh;
+
+    color: #fff;
+    min-height: 500px;
+    */
+    font-family: 'ubuntu', sans-serif;
+    border-radius: 6px
+}
+.home .max-width{
+    margin:auto 0 auto 40px ;
+}
+.home .home-content .text-1{
+    font-size: 27px;
+}
+.home .home-content .text-2{
+    font-size: 75px;
+    font-weight: 600;
+    margin-left: -3px;
+}.home .home-content .text-3{
+    font-size: 40px;
+    margin: 5px 0;
+}
+.home .home-content .text-3 span{
+    color:skyblue;
+    font-weight: 500;
+}
+.home .home-content a{
+    display: inline-block;
+    background: skyblue;
+    color: #fff;
+    font-size: 25px;
+    padding: 12px 36px;
+    margin-top: 20px;
+    border-radius: 8px;
+    border: 2px solid skyblue;
+    transition: all 0.3s ease;
+} 
+.home .home-content a:hover{
+    color:skyblue;
+    background: none;
+}
+
+*similar code for all*/
+section{
+    padding: 100px 0;
+}
+.about , .Services, .skills, .teams, .contact, .footerIcon, footer{
+    font-family: 'poppins',sans-serif;
+}
+.about .about-content,
+.Services .serv-content,
+.skills .skills-content
+.contact .contact-content,
+.footerIcon .social-content{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+section .title{
+    position: relative;
+    text-align: center;
+    font-size: 40px;
+    font-weight: 500;
+    margin-bottom: 60px;
+    padding-bottom: 20px;
+    font-family: 'ubuntu', sans-serif;
+}
+section .title::before{
+    content: "";
+    position: absolute;
+    bottom: 0px;
+    left: 50%;
+    width: 180px;
+    height: 3px;
+    background: #111;
+    transform: translateX(-50%);
+}
+section .title::after{
+    content: "";
+    position: absolute;
+    bottom: -12px;
+    left: 50%;
+    font-size: 20px;
+    color:skyblue;
+    padding: 5px;
+    background: #fff;
+    transform: translateX(-50%);
+}
+
+/*about section content code*/
+
+.about .title::after{
+    content: "Who i am";
+}
+.about .about-content .left{
+    width: 45%;
+}
+.about .about-content .left img{
+    height: 400px;
+    width: 400px;
+    object-fit: cover;
+    border-radius: 6px;
+}
+.about .about-content .right{
+    width: 55%;
+}
+.about .about-content .right .text{
+    font-size: 25px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+.about .about-content .right .text span{
+    color: skyblue;
+}
+.about .about-content .right p{
+    text-align: justify;
+}
+.about .about-content .right a{
+    display: inline-block;
+    background: skyblue;
+    color: #fff;
+    font-size: 20px;
+    font-weight: 500;
+    padding: 10px 30px;
+    margin-top: 20px;
+    border-radius: 8px;
+    border: 2px solid skyblue;
+    transition: all 0.3s ease;
+}
+.about .about-content .right a:hover{
+    color: skyblue;
+    background: none;
+}
+
+/*services styling*/
+.Services, .teams{
+    color: #fff;
+    background: #111;
+}
+.Services .title::before,
+.teams .title::before{
+    background: #fff;
+}
+.Services .title::after,
+.teams .title::after{
+    background: #111;
+    content: "What I provide"; 
+}
+.Services .serv-content .card{
+    width: calc(33% - 20px);
+    background: #222;
+    text-align: center;
+    border-radius: 6px;
+    padding: 20px 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+.Services .serv-content .card:hover{
+    background: skyblue;
+}
+.Services .serv-content .card .box{
+    transition: all 0.3s ease;
+}
+.Services .serv-content .card:hover .box{
+    transform: scale(1.05);
+}
+.Services .serv-content .card i{
+    font-size: 50px;
+    color: skyblue;
+    transition: color 0.3s ease;
+
+}
+.Services .serv-content .card:hover i{
+    color: #fff;
+   
+}
+.Services .serv-content .card .text{
+    font-size: 25px;
+    font-weight: 500;
+    margin: 10px 0 7px 0;
+}
+
+/*My Skills  styling*/
+.skills .title::after{
+    content: "Things I Know";
+}
+.skills .skills-content .column{
+    width: calc(50% - 30px);
+}
+.skills .skills-content .left .text{
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+.skills .skills-content .left p{
+    text-align: justify;
+}
+.skills .skills-content .left a{
+    display: inline-block;
+    background: skyblue;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 500;
+    padding: 8px 16px;
+    margin-top: 20px;
+    border-radius: 8px;
+    border: 2px solid skyblue;
+    transition: all 0.3s ease;
+}
+.skills .skills-content .left a:hover{
+    color: skyblue;
+    background:none;
+}
+.skills .skills-content .right .bars{
+    margin-bottom: 15px; 
+}
+.skills .skills-content .right .info{
+    display: flex;
+    margin-bottom: 5px;
+    align-items: center;
+    justify-content: space-between;
+}
+.skills .skills-content .right .span{
+    font-weight: 500;
+    font-size: 18px;
+}
+.skills .skills-content .right .line{
+    height: 5px;
+    width: 100%;
+    background: lightgrey;
+    position: relative;
+}
+.skills .skills-content .right .line::before{
+    content: "";
+    position: absolute;
+    height: 100%;
+    left: 0;
+    top: 0;
+    background: skyblue;
+}
+.skills-content .right .Java::before{
+    width: 53%;
+}
+.skills-content .right .css::before{
+    width: 73%;
+}
+.skills-content .right .html::before{
+    width: 83%;
+}
+.skills-content .right .Hacking::before{
+    width: 55%;
+}
+.skills-content .right .js::before{
+    width: 63%;
+}
+
+/*contacts Styling*/
+.contact .title::after{
+    content: "Get In Touch";
+}
+.contact .contact-content .column{
+    width: calc(50% - 30px);
+}
+.contact .contact-content .text{
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 10px;
+
+}
+.contact .contact-content .left p{
+    text-align: justify;
+}
+.contact .contact-content .left .icons{
+    margin: 10px 0;
+}
+.contact .contact-content .row{
+    display: flex;
+    height: 65px;
+    align-items: center;
+}
+.contact .contact-content .row .info{
+    margin-left: 30px;
+}
+.contact .contact-content .row i{
+    font-size: 25px;
+    color: skyblue;
+}
+.contact .contact-content .info .head{
+    font-weight: 500;
+}.contact .contact-content .info .sub-title{
+    color: #333;
+}
+.contact .right form .fields{
+    display: flex;
+}
+.contact .right form .field,
+.contact .right form .fields .field{
+    height: 45px;
+    width: 100%;
+    margin-bottom: 15px;
+}
+.contact .right form .textarea{
+    height: 80px;
+    width: 100%;
+}
+.contact .right form .name{
+    margin-right: 10px;
+}
+.contact .right form .email{
+    margin-left: 10px;
+}
+.contact .right form .field input,
+.contact .right form .textarea textarea{
+    height: 100%;
+    width: 100%;
+    border: 1px solid lightgrey;
+    border-radius: 6px;
+    outline: none;
+    padding: 0 15px ;
+    font-size: 17px;
+    font-family: 'poppins',sans-serif;
+}
+.contact .right form .textarea textarea{
+    padding-top: 10px;
+    resize: none;
+}
+.contact .right form .button{
+    height: 47px;
+    width: 170px;
+}
+.contact .right form .button button{
+    width: 100%;
+    height: 100%;
+    border: 2px solid skyblue;
+    background: skyblue;
+    color: #fff;
+    font-size: 20px;
+    font-weight: 500;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+.contact .right form .button button:hover{
+    color:skyblue;
+    background: none;
+}
+
+/*footer paivy section code*/
+.footerIcon .title::after{
+    content: "My social life";
+}
+
+.social-links{
+    display: flex;
+    justify-content:space-around;
+}
+.social-links ul{
+    padding: 10px;
+    display: flex;
+}
+.social-items{
+    list-style: none;
+    align-items: center;
+    justify-content:space-between;
+}
+.social-items a{
+    padding: 10px 29px;
+    font-size: 30px;
+    color:black;
+    transition: all 0.3s ease;
+}
+.social-items a:hover{
+    color:skyblue;
+    background:none;
+}
+
+
+
+
+
+
+
+
+/*footer section code*/
+footer{
+    background: #111;
+    padding: 20px 23px;
+    color: #fff;
+}
+footer span a{
+    color: skyblue;
+    text-decoration:none;
+}
+footer span a:hover{
+    text-decoration: underline;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
