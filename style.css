@@ -215,7 +215,7 @@ html{
     background: none;
 }
 
-*similar code for all*/
+/*similar code for all*/
 section{
     padding: 100px 0;
 }
@@ -414,8 +414,7 @@ section .title::after{
     top: 0;
     background: skyblue;
 }
-.skills-content .right .Java::before{
-    width: 53%;
+
 }
 .skills-content .right .css::before{
     width: 73%;
@@ -423,8 +422,7 @@ section .title::after{
 .skills-content .right .html::before{
     width: 83%;
 }
-.skills-content .right .Hacking::before{
-    width: 55%;
+
 }
 .skills-content .right .js::before{
     width: 63%;
@@ -553,11 +551,6 @@ section .title::after{
     color:skyblue;
     background:none;
 }
-
-
-
-
-
 
 
 
